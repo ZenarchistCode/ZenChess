@@ -14,6 +14,10 @@
         <usage name="Town"/>
         <usage name="Village"/>
     </type>
+	<type name="Zen_ChessBoard_Static">
+		<lifetime>9999999</lifetime>
+		<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="1" deloot="0"/>
+	</type>
 	<type name="Zen_ChessWhitePawn">
         <lifetime>3600</lifetime>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="1" deloot="0"/>

@@ -59,6 +59,12 @@ class CfgVehicles
 		itemBehaviour = 1;
 		repairableWithKits[] = { 8 };
 		repairCosts[] = { 30 };
+		class Cargo
+		{
+			itemsCargoSize[]={8,4};
+			openable=0;
+			allowOwnedCargoManipulation=1;
+		};
 		attachments[] = 
 		{ 
 			"ZenChess1",
@@ -199,6 +205,8 @@ class CfgVehicles
 		};
 		soundImpactType = "wood";
 	};
+	class Zen_ChessBoard_Static : Zen_ChessBoard {};
+
 	class Zen_ChessPieceBase : Inventory_Base
 	{
 		scope = 0;
@@ -275,6 +283,12 @@ class CfgVehicles
 			"ZenChess63",
 			"ZenChess64"
 		};
+		soundImpactType = "wood";
+	};
+
+	class Zen_ChessPieceBlackBase : Zen_ChessPieceBase
+	{
+		scope = 0;
 		class DamageSystem
 		{
 			class GlobalHealth
@@ -282,78 +296,179 @@ class CfgVehicles
 				class Health
 				{
 					hitpoints = 25;
+					healthLevels[] =
+					{
+
+						{
+							1,
+
+							{
+								"ZenChess\data\model\textures\ChessBlackPiece.rvmat"
+							}
+						},
+
+						{
+							0.69999999,
+
+							{
+								"ZenChess\data\model\textures\ChessBlackPiece.rvmat"
+							}
+						},
+
+						{
+							0.5,
+
+							{
+								"ZenChess\data\model\textures\ChessBlackPiece.rvmat"
+							}
+						},
+
+						{
+							0.30000001,
+
+							{
+								"ZenChess\data\model\textures\ChessBlackPiece.rvmat"
+							}
+						},
+
+						{
+							0,
+
+							{
+								"ZenChess\data\model\textures\ChessBlackPiece.rvmat"
+							}
+						}
+					};
 				};
 			};
 		};
-		soundImpactType = "wood";
-	};
-	class Zen_ChessWhitePawn : Zen_ChessPieceBase
+	}
+
+	class Zen_ChessPieceWhiteBase : Zen_ChessPieceBase
+	{
+		scope = 0;
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 25;
+					healthLevels[] =
+					{
+
+						{
+							1,
+
+							{
+								"ZenChess\data\model\textures\ChessWhitePiece.rvmat"
+							}
+						},
+
+						{
+							0.69999999,
+
+							{
+								"ZenChess\data\model\textures\ChessWhitePiece.rvmat"
+							}
+						},
+
+						{
+							0.5,
+
+							{
+								"ZenChess\data\model\textures\ChessWhitePiece.rvmat"
+							}
+						},
+
+						{
+							0.30000001,
+
+							{
+								"ZenChess\data\model\textures\ChessWhitePiece.rvmat"
+							}
+						},
+
+						{
+							0,
+
+							{
+								"ZenChess\data\model\textures\ChessWhitePiece.rvmat"
+							}
+						}
+					};
+				};
+			};
+		};
+	}
+
+	class Zen_ChessWhitePawn : Zen_ChessPieceWhiteBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessPawn";
 		model = "ZenChess\data\model\white_pawn.p3d";
 	};
-	class Zen_ChessBlackPawn : Zen_ChessPieceBase
+	class Zen_ChessBlackPawn : Zen_ChessPieceBlackBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessPawn";
 		model = "ZenChess\data\model\black_pawn.p3d";
 	};
-	class Zen_ChessWhiteBishop : Zen_ChessPieceBase
+	class Zen_ChessWhiteBishop : Zen_ChessPieceWhiteBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessBishop";
 		model = "ZenChess\data\model\white_bishop.p3d";
 	};
-	class Zen_ChessBlackBishop : Zen_ChessPieceBase
+	class Zen_ChessBlackBishop : Zen_ChessPieceBlackBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessBishop";
 		model = "ZenChess\data\model\black_bishop.p3d";
 	};
-	class Zen_ChessWhiteKing : Zen_ChessPieceBase
+	class Zen_ChessWhiteKing : Zen_ChessPieceWhiteBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessKing";
 		model = "ZenChess\data\model\white_king.p3d";
 	};
-	class Zen_ChessBlackKing : Zen_ChessPieceBase
+	class Zen_ChessBlackKing : Zen_ChessPieceBlackBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessKing";
 		model = "ZenChess\data\model\black_king.p3d";
 	};
-	class Zen_ChessWhiteKnight : Zen_ChessPieceBase
+	class Zen_ChessWhiteKnight : Zen_ChessPieceWhiteBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessKnight";
 		model = "ZenChess\data\model\white_knight.p3d";
 	};
-	class Zen_ChessBlackKnight : Zen_ChessPieceBase
+	class Zen_ChessBlackKnight : Zen_ChessPieceBlackBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessKnight";
 		model = "ZenChess\data\model\black_knight.p3d";
 	};
-	class Zen_ChessWhiteQueen : Zen_ChessPieceBase
+	class Zen_ChessWhiteQueen : Zen_ChessPieceWhiteBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessQueen";
 		model = "ZenChess\data\model\white_queen.p3d";
 	};
-	class Zen_ChessBlackQueen : Zen_ChessPieceBase
+	class Zen_ChessBlackQueen : Zen_ChessPieceBlackBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessQueen";
 		model = "ZenChess\data\model\black_queen.p3d";
 	};
-	class Zen_ChessWhiteRook : Zen_ChessPieceBase
+	class Zen_ChessWhiteRook : Zen_ChessPieceWhiteBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessRook";
 		model = "ZenChess\data\model\white_rook.p3d";
 	};
-	class Zen_ChessBlackRook : Zen_ChessPieceBase
+	class Zen_ChessBlackRook : Zen_ChessPieceBlackBase
 	{
 		scope = 2;
 		displayName = "$STR_ZenChessRook";

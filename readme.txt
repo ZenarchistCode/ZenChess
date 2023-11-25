@@ -10,6 +10,10 @@ Craft white pieces by using a knife on light birch bark.
 
 You play chess by moving the pieces on attachment slots, but there's nothing to stop you from cheating. So don't leave your opponent unobserved if you don't trust them not to cheat!
 
+Server admins can place the Zen_ChessBoard_Static item to create a static chessboard that cannot be moved or taken by players. This board also spawns in all of its parts and will not allow players to remove pieces from the board. The idea behind this board is to be placed in communal areas like trader zones etc so that players can hang out and have a game at any time. 
+
+To place this static board use DayZ Editor or other admin tools (don't forget to add the types.xml entry if you want persistence so that games don't reset on server restarts).
+
 Credit to Mass for his MassManyItemOverhaul which is where I first saw a functional chessboard in DayZ. I stumbled across a chess 3D model on Sketchfab and wanted to make my own standalone chess mod for my server, but the inspiration to know it was possible came from Mass's work. Go check out his mod if you want a lot more than just a chess set.
 
 Installation Instructions:
@@ -55,6 +59,10 @@ Types.XML:
         <tag name="shelves"/>
         <usage name="Town"/>
         <usage name="Village"/>
+    </type>
+	<type name="Zen_ChessBoard_Static">
+        <lifetime>9999999</lifetime>
+        <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="1" deloot="0"/>
     </type>
 	<type name="Zen_ChessWhitePawn">
         <lifetime>3600</lifetime>
